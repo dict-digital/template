@@ -12,12 +12,12 @@
 <style lang="scss" scoped>
 .root {
   .nav {
-    backdrop-filter: brightness(1.2);
+    backdrop-filter: brightness(var(--backdropBr));
     padding: 1px 30px;
     height: 38px;
     border-radius: 19px;
     a {
-      color: white;
+      color: var(--foreground);
       text-decoration: none;
     }
   }

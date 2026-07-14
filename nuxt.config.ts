@@ -16,7 +16,10 @@ export default defineNuxtConfig({
     build: {
       markdown: {
         highlight: {
-          theme: 'night-owl',
+          theme: {
+            default: 'vitesse-light',
+            dark: 'vitesse-dark'
+          },
           langs: ['js', 'jsx', 'ts', 'tsx', 'svelte']
         },
         remarkPlugins: {
@@ -27,6 +30,9 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  colorMode: {
+    classSuffix: ''
   },
   css: [
     '@unocss/reset/sanitize/sanitize.css',
@@ -42,7 +48,7 @@ export default defineNuxtConfig({
       }
     }
   },
-  modules: ['@nuxtjs/sitemap', '@nuxt/content', '@unocss/nuxt'],
+  modules: ['@nuxtjs/sitemap', '@nuxt/content', '@unocss/nuxt', '@nuxtjs/color-mode'],
   site: {
     url: 'https://physics.hs.dict.digital',
     name: '物理 - dict.digital',

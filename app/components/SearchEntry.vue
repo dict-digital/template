@@ -59,7 +59,7 @@ const mode = useStorage('dict-search-mode', '見出し');
 
 <style lang="scss" scoped>
 .root {
-  backdrop-filter: brightness(1.2);
+  backdrop-filter: brightness(var(--backdropBr));
   border-radius: 16px;
 
   .searchSlot {
@@ -67,7 +67,7 @@ const mode = useStorage('dict-search-mode', '見出し');
     input {
       background-color: var(--codeBack);
       font-family: 'Fira Code Variable', 'M PLUS 1 Code Variable', monospace;
-      color: white;
+      color: var(--foreground);
       font-size: 18px;
       border: none;
       border-radius: 20px;

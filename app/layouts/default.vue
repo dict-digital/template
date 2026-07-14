@@ -74,7 +74,7 @@ const route = useRoute();
 }
 
 .menuBar {
-  backdrop-filter: brightness(1.2);
+  backdrop-filter: brightness(var(--backdropBr));
   border-radius: 16px;
   .back {
     display: none;

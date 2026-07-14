@@ -96,14 +96,14 @@ route.meta.menuTitle = post.value?.title || 'Dictionary';
     h5,
     h6 {
       a {
-        color: white;
+        color: var(--foreground);
         text-decoration: none;
         &::before {
           content: '#';
           transition: opacity 0.3s ease;
           opacity: 0;
           left: 0;
-          color: white;
+          color: var(--foreground);
         }
         &:hover::before {
           opacity: 0.3;

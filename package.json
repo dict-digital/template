@@ -20,6 +20,7 @@
     "@fontsource/zen-kaku-gothic-new": "^5.2.7",
     "@fontsource/zen-maru-gothic": "^5.2.8",
     "@nuxt/content": "^3.13.0",
+    "@nuxtjs/color-mode": "4.0.1",
     "@unocss/reset": "^66.6.8",
     "@vueuse/core": "^14.3.0",
     "better-sqlite3": "^12.9.0",

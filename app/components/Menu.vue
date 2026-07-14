@@ -76,7 +76,7 @@ const copyUrlScheme = () => {
 <template>
   <div ref="menuContainer" relative inline-block>
     <button
-      text-white
+      text="[var(--foreground)]"
       bg-transparent
       border-none
       h-full
@@ -127,7 +127,7 @@ const copyUrlScheme = () => {
 
 <style lang="scss" scoped>
 .menu-dropdown {
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px) brightness(var(--backdropBr));
   border: 1px solid var(--codeBack);
   height: 400px;
   max-height: calc(100dvh - 80px);
@@ -147,7 +147,7 @@ const copyUrlScheme = () => {
         text-align: left;
         background: transparent;
         border: none;
-        color: white;
+        color: var(--foreground);
         cursor: pointer;
         font-size: 0.875rem;
         transition: background-color 0.2s;

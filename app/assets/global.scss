@@ -1,13 +1,22 @@
 :root {
-  --background: #16171d;
+  --foreground: #16171d;
+  --background: white;
+  --backdropBr: 0.96;
   --borderColor: rgb(97, 97, 97);
-  --themeColor: #2ff2a4;
-  --codeBack: #011627;
+  --codeBack: white;
+
+  &.dark {
+  --foreground: white;
+  --background: #16171d;
+  --backdropBr: 1.2;
+  --borderColor: rgb(255,255,255,0.5);
+  --codeBack: #212528;
+  }
 
   --headerHeight: 45px;
   --searchWidth: 320px;
   background-color: var(--background);
-  color: white;
+  color: var(--foreground);
 }
 
 html,
@@ -20,6 +29,7 @@ body {
   font-family: 'Zen Kaku Gothic New', sans-serif;
   overscroll-behavior: none;
 }
+
 
 a {
   color: var(--themeColor);
