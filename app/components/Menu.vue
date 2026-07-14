@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
 
+const appConfig = useAppConfig();
+
 const route = useRoute();
 
 watch(
@@ -101,17 +103,11 @@ const copyUrlScheme = () => {
         <ul list-none p-1 m-0>
           <!-- 区切りは <hr /> で表記 -->
           <li>
-            <NuxtLink to="/info/app/"> このAppについて </NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/info/contents/"> コンテンツの著作権 </NuxtLink>
-          </li>
-          <li>
             <a href="/sitemap.xml">サイトマップ</a>
           </li>
-          <li>
+          <li v-if="appConfig.githubLink">
             <NuxtLink
-              to="https://github.com/wing-0902/physics.hs.dict.digital"
+              :to="appConfig.githubLink"
               target="_blank"
             >
               <span i-hugeicons-github-01></span>
@@ -119,14 +115,10 @@ const copyUrlScheme = () => {
             >
           </li>
 
-          <hr />
+          <li><hr /></li>
 
-          <li>
-            <button @click="handleShare">共有</button>
-          </li>
-          <li>
-            <button @click="copyUrlScheme">URLスキームをコピー</button>
-          </li>
+          <li>{{ appConfig.siteName }}</li>
+          <li>&copy; {{ appConfig.copyRight }}</li>
         </ul>
       </div>
     </Transition>
@@ -163,11 +155,11 @@ const copyUrlScheme = () => {
           background-color: var(--codeBack);
         }
       }
-    }
-    hr {
+          hr {
       margin: 20px 4px;
       color: rgba(255, 255, 255, 0.3);
       height: 0.5px;
+    }
     }
   }
 }

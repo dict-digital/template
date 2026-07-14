@@ -47,11 +47,6 @@ const route = useRoute();
         <article class="slotBox">
           <slot />
         </article>
-        <div h-8 w-full>
-          <div h-full w-full class="menuBar" flex justify-center items-center>
-            <Share />
-          </div>
-        </div>
       </main>
     </div>
   </div>
