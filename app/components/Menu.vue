@@ -47,35 +47,6 @@ const close = () => {
   isOpen.value = false;
 };
 
-const handleShare = () => {
-  if (navigator.share) {
-    navigator
-      .share({
-        title: '物理 - dict.digital',
-        url: 'https://physics.hs.dict.digital'
-      })
-      .catch((error) => {
-        console.error('共有に失敗:', error);
-      });
-  } else {
-    alert('このブラウザはWeb Share APIに対応していません．');
-  }
-  close();
-};
-
-// メニュー項目の操作処理
-const copyUrlScheme = () => {
-  const urlScheme = 'https://physics.hs.dict.digital/content/[slug]';
-  navigator.clipboard.writeText(urlScheme).then(
-    () => {},
-    (err) => {
-      console.error('URLスキームのコピーに失敗：', err);
-      alert('URLスキームのコピーに失敗しました．');
-    }
-  );
-  close();
-};
-
 // function to change color mode
 const changeColorMode = () => {
   const current = colorMode.preference;
