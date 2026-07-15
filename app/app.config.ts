@@ -6,5 +6,5 @@ export default defineAppConfig({
   },
   siteName: 'template - dict.digital',
   copyRight: '2026 dict.digital',
-  githubLink: 'https://github.com/wing-0902/dictdigi-layer'
+  githubLink: 'https://github.com/dict-digital/template'
 });
