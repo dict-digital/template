@@ -23,7 +23,7 @@
 ├── content
 │   └── dict <- ファイル名は全て"index.md"
 │       └── gb
-│           ├──index.md <- 国家の場合ISO 3166-1に従う（ドメイン名とおおかた一致するが，GBなど例外あり）
+│           ├──index.md
 │           └──gibraltar/index.md <- 複数階層のパスも可能
 └── package.json
 ```
