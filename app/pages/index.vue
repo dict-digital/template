@@ -16,6 +16,6 @@ useSeoMeta({
 
 <template lang="pug">
 h1 ようこそ
-p このアプリは物理基礎・物理の内容を辞書にまとめたものです．
+p このアプリはdict.digtal テンプレートの使い方を示したものです．
 p 左の検索ボックスに何か入力してみてください．
 </template>
