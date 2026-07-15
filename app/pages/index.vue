@@ -1,10 +1,16 @@
 <script setup lang="ts">
+const appConfig = useAppConfig();
+
 definePageMeta({
   hideSidebar: false,
   sidebarContent: 'search',
   contentMain: false,
   menuTitle: 'Welcome!',
   returnTo: '/'
+});
+
+useSeoMeta({
+  title: appConfig.siteName
 });
 </script>
 

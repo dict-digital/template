@@ -6,11 +6,11 @@
   --codeBack: white;
 
   &.dark {
-  --foreground: white;
-  --background: #16171d;
-  --backdropBr: 1.2;
-  --borderColor: rgb(255,255,255,0.5);
-  --codeBack: #212528;
+    --foreground: white;
+    --background: #16171d;
+    --backdropBr: 1.2;
+    --borderColor: rgb(255, 255, 255, 0.5);
+    --codeBack: #212528;
   }
 
   --headerHeight: 45px;
@@ -29,7 +29,6 @@ body {
   font-family: 'Zen Kaku Gothic New', sans-serif;
   overscroll-behavior: none;
 }
-
 
 a {
   color: var(--themeColor);

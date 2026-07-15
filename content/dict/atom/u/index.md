@@ -6,5 +6,7 @@ category: 原子
 $1 \text{[u]} = \ce{^12_6 C}$原子１個の質量の$\frac{1}{12} \fallingdotseq 1.66 * 10^{-27} \text{[kg]}$
 
 ```ts
-const a = () => {console.log("")}
+const a = () => {
+  console.log('');
+};
 ```

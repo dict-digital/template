@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
 
+import { joinURL, withoutHost } from 'ufo';
+
 const appConfig = useAppConfig();
+
+const colorMode = useColorMode();
 
 const route = useRoute();
 
@@ -71,6 +75,19 @@ const copyUrlScheme = () => {
   );
   close();
 };
+
+// function to change color mode
+const changeColorMode = () => {
+  const current = colorMode.preference;
+
+  if (current === 'system') {
+    colorMode.preference = 'light';
+  } else if (current === 'light') {
+    colorMode.preference = 'dark';
+  } else if (current === 'dark') {
+    colorMode.preference = 'system';
+  }
+};
 </script>
 
 <template>
@@ -103,11 +120,27 @@ const copyUrlScheme = () => {
         <ul list-none p-1 m-0>
           <!-- 区切りは <hr /> で表記 -->
           <li>
+            <button
+              @click="changeColorMode"
+              justify-between
+              w-full
+              items-center
+            >
+              <span>カラーモード</span>
+              <span>{{ colorMode.preference }}</span>
+            </button>
+          </li>
+          <li>
             <a href="/sitemap.xml">サイトマップ</a>
           </li>
           <li v-if="appConfig.githubLink">
             <NuxtLink
-              :to="appConfig.githubLink"
+              :to="
+                joinURL(
+                  'https://github.com/',
+                  withoutHost(appConfig.githubLink)
+                )
+              "
               target="_blank"
             >
               <span i-hugeicons-github-01></span>
@@ -136,10 +169,11 @@ const copyUrlScheme = () => {
       margin: 1px;
       list-style: none;
       button,
-      a {
+      a,
+      .slot {
         appearance: none;
         -webkit-appearance: none;
-        display: block;
+        display: flex;
         width: 100%;
         height: 40px;
         border-radius: 20px;
@@ -155,11 +189,11 @@ const copyUrlScheme = () => {
           background-color: var(--codeBack);
         }
       }
-          hr {
-      margin: 20px 4px;
-      color: rgba(255, 255, 255, 0.3);
-      height: 0.5px;
-    }
+      hr {
+        margin: 20px 4px;
+        color: rgba(255, 255, 255, 0.3);
+        height: 0.5px;
+      }
     }
   }
 }

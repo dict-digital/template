@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { joinURL } from 'ufo';
+import { joinURL, withoutHost } from 'ufo';
 
 const slugArray = useRoute().params.slug; // [...slug] の場合は配列になる
+
+const appConfig = useAppConfig();
 
 // 配列を "dir1/dir2/page" のようなスラッシュ区切りの文字列に変換
 // 万が一空（ルートパス）の場合を考慮して、空文字をデフォルト値に設定
@@ -13,7 +15,7 @@ const { data: post } = await useAsyncData(`dict-${slugPath}`, () => {
 });
 
 useSeoMeta({
-  title: post.value?.title + ' - 物理 - dict.digital'
+  title: post.value?.title + ' - ' + appConfig.siteName
 });
 
 definePageMeta({
@@ -40,11 +42,20 @@ route.meta.menuTitle = post.value?.title || 'Dictionary';
       <ContentRenderer :value="post" />
     </div>
 
-    <div data-pagefind-ignore w-full flex justify-center gap-4>
+    <div
+      v-if="appConfig.githubLink"
+      data-pagefind-ignore
+      w-full
+      flex
+      justify-center
+      gap-4
+    >
       <NuxtLink
-        :href="
+        :to="
           joinURL(
-            'https://raw.githubusercontent.com/wing-0902/physics.hs.dict.digital/refs/heads/main/content/',
+            'https://raw.githubusercontent.com',
+            withoutHost(appConfig.githubLink),
+            'refs/heads/main/content/',
             post.path,
             'index.md'
           )
@@ -57,7 +68,9 @@ route.meta.menuTitle = post.value?.title || 'Dictionary';
       <NuxtLink
         :to="
           joinURL(
-            'https://github.com/wing-0902/physics.hs.dict.digital/edit/main/content',
+            'https://github.com',
+            withoutHost(appConfig.githubLink),
+            '/edit/main/content',
             post.path,
             'index.md'
           )

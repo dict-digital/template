@@ -114,11 +114,8 @@ onMounted(async () => {
               v-for="(subResult, index) in result.sub_results"
               :key="subResult.url"
             >
-              <li v-if="index > 0" class="中身" text-left m-0 p-0>
-                <NuxtLink
-                  :href="subResult.url"
-                  @mousedown="handleSave(props.query)"
-                >
+              <li v-if="Number(index) > 0" class="中身" text-left m-0 p-0>
+                <NuxtLink :href="subResult.url">
                   <h3 class="タイトル">{{ subResult.title }}</h3>
                 </NuxtLink>
               </li>

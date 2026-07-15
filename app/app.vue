@@ -8,12 +8,14 @@ const appConfig = useAppConfig();
 
 useHead({
   htmlAttrs: {
-    style: computed(() => `
+    style: computed(
+      () => `
       --theme-color-light: ${appConfig.theme.lightColor};
       --theme-color-dark: ${appConfig.theme.darkColor};
-    `)
+    `
+    )
   }
-})
+});
 </script>
 
 <template>
@@ -22,10 +24,11 @@ useHead({
   </NuxtLayout>
 </template>
 
-<style lang='scss'>
+<style lang="scss">
 :root {
   --themeColor: var(--theme-color-light);
-&.dark {
-  --themeColor: var(--theme-color-dark);
-}}
+  &.dark {
+    --themeColor: var(--theme-color-dark);
+  }
+}
 </style>

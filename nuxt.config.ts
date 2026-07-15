@@ -5,11 +5,15 @@ import 'katex/contrib/mhchem';
 export default defineNuxtConfig({
   app: {
     head: {
-      title: '物理 - dict.digital',
       htmlAttrs: {
         lang: 'ja'
       }
     }
+  },
+  colorMode: {
+    preference: 'system',
+    fallback: 'light',
+    classSuffix: ''
   },
   compatibilityDate: '2025-07-15',
   content: {
@@ -31,9 +35,6 @@ export default defineNuxtConfig({
       }
     }
   },
-  colorMode: {
-    classSuffix: ''
-  },
   css: [
     '@unocss/reset/sanitize/sanitize.css',
     '@unocss/reset/sanitize/assets.css',
@@ -48,7 +49,12 @@ export default defineNuxtConfig({
       }
     }
   },
-  modules: ['@nuxtjs/sitemap', '@nuxt/content', '@unocss/nuxt', '@nuxtjs/color-mode'],
+  modules: [
+    '@nuxtjs/sitemap',
+    '@nuxt/content',
+    '@unocss/nuxt',
+    '@nuxtjs/color-mode'
+  ],
   site: {
     url: 'https://physics.hs.dict.digital',
     name: '物理 - dict.digital',
