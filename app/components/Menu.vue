@@ -121,6 +121,8 @@ const changeColorMode = () => {
 
           <li><hr /></li>
 
+          <MenuMore />
+
           <li>{{ appConfig.siteName }}</li>
           <li>&copy; {{ appConfig.copyRight }}</li>
         </ul>
@@ -136,7 +138,7 @@ const changeColorMode = () => {
   height: 400px;
   max-height: calc(100dvh - 80px);
   ul {
-    li {
+    :deep(li) {
       margin: 1px;
       list-style: none;
       button,
