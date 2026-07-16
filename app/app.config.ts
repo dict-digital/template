@@ -1,8 +1,8 @@
 // app.config.ts
 export default defineAppConfig({
   theme: {
-    lightColor: '#0b8b57',
-    darkColor: '#2ff2a4'
+    lightColor: '#df841c',
+    darkColor: '#ffd91c'
   },
   siteName: 'template - dict.digital',
   copyRight: '2026 dict.digital',

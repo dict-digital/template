@@ -16,7 +16,7 @@ const mode = useStorage('dict-search-mode', '見出し');
             h-full
             w-full
             type="text"
-            placeholder="検索.."
+            :placeholder="i18n.search"
             v-model="query"
           />
           <button
