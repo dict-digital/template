@@ -100,7 +100,7 @@ const changeColorMode = () => {
               items-center
             >
               <span>{{ i18n.color_mode.name }}</span>
-              <span>{{ i18n.color_mode.[colorMode.preference] }}</span>
+              <span>{{ i18n.color_mode[colorMode.preference] }}</span>
             </button>
           </li>
           <li>
