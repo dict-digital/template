@@ -12,8 +12,8 @@
     "no_result": "Result not found",
     "searching": "Searching...",
     "len": {
-      "before": "",
-      "after": ""
+      "before": "Showing",
+      "after": "results"
     },
     "type_to_search": "Type something to search",
     "all": "Run full text retrieval"
