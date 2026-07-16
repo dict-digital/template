@@ -1,9 +1,13 @@
+<script setup lang='ts'>
+import i18n from '~/assets/i18n.json';
+</script>
+
 <template>
   <header class="root" h-full flex justify-center items-center>
     <div class="nav" flex justify-center items-center>
       <NuxtLink to="/">
         <span i-hugeicons-search-02></span>
-        検索
+        {{ i18n.search }}
       </NuxtLink>
     </div>
   </header>

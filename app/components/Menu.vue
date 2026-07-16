@@ -3,6 +3,8 @@ import { ref, onMounted, onUnmounted } from 'vue';
 
 import { joinURL, withoutHost } from 'ufo';
 
+import i18n from "~/assets/i18n.json";
+
 const appConfig = useAppConfig();
 
 const colorMode = useColorMode();
@@ -97,12 +99,12 @@ const changeColorMode = () => {
               w-full
               items-center
             >
-              <span>カラーモード</span>
-              <span>{{ colorMode.preference }}</span>
+              <span>{{ i18n.color_mode.name }}</span>
+              <span>{{ i18n.color_mode.[colorMode.preference] }}</span>
             </button>
           </li>
           <li>
-            <a href="/sitemap.xml">サイトマップ</a>
+            <a href="/sitemap.xml">{{ i18n.site_map }}</a>
           </li>
           <li v-if="appConfig.githubLink">
             <NuxtLink

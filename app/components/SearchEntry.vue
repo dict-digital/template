@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useStorage } from '@vueuse/core';
 
+import i18n from '~/assets/i18n.json';
+
 const query = useStorage('dict-search-query', '');
 const mode = useStorage('dict-search-mode', '見出し');
 </script>
@@ -41,10 +43,10 @@ const mode = useStorage('dict-search-mode', '見出し');
             :class="{ select: mode === '見出し' }"
             @click="mode = '見出し'"
           >
-            見出し
+            {{ i18n.title }}
           </button>
           <button :class="{ select: mode === '全文' }" @click="mode = '全文'">
-            全文
+            {{ i18n.full_text }}
           </button>
         </div>
       </ClientOnly>

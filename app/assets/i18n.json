@@ -1,0 +1,12 @@
+{
+  "search": "Search",
+  "title": "Title",
+  "full_text": "Full",
+  "color_mode": {
+    "name": "Color Mode",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "site_map": "Sitemap"
+}
