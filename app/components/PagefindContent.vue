@@ -23,7 +23,7 @@ let pagefind: any = null;
 
 // pageSize を削除
 const PAGEFIND_OPTIONS = {
-  bundlePath: 'https://physics.hs.dict.digital/content_search/',
+  bundlePath: '/content_search/',
   baseUrl: '/content/'
 };
 
