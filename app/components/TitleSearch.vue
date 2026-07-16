@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
+import i18n from '~/assets/i18n.json';
+
 const props = defineProps({
   query: String
 });
@@ -41,7 +43,7 @@ const filteredWords = computed(() => {
     </template>
     <hr v-if="filteredWords?.length" />
   </ul>
-  <p v-else>条件に合う結果は見つかりませんでした．</p>
+  <p v-else>{{ i18n.search_component.no_result }}</p>
 </template>
 
 <style lang="scss" scoped>

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { joinURL, withoutHost } from 'ufo';
 
+import i18n from '~/assets/i18n.json';
+
 const slugArray = useRoute().params.slug; // [...slug] の場合は配列になる
 
 const appConfig = useAppConfig();
@@ -63,7 +65,7 @@ route.meta.menuTitle = post.value?.title || 'Dictionary';
         target="_blank"
       >
         <span i-material-symbols-light-docs></span>
-        Markdownを表示
+        {{ i18n.display_markdown }}
       </NuxtLink>
       <NuxtLink
         :to="
@@ -78,13 +80,13 @@ route.meta.menuTitle = post.value?.title || 'Dictionary';
         target="_blank"
       >
         <span i-material-symbols-light-edit></span>
-        編集を提案
+        {{ i18n.edit_this_page }}
       </NuxtLink>
     </div>
   </div>
   <div v-else>
-    <h1>Not Found</h1>
-    <p>読み込み中またはコンテンツが存在しません．</p>
+    <h1>{{ i18n.not_found_title }}</h1>
+    <p>{{ i18n.not_found_error }}</p>
   </div>
 </template>
 

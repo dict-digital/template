@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref, onMounted, watch } from 'vue';
-import { 結果なし, 検索中, 表示中 } from '~/var/msg';
+
+import i18n from '~/assets/i18n.json';
 
 // CSS
 import '~/assets/pagefindUi.scss';
@@ -91,11 +92,11 @@ onMounted(async () => {
 <template>
   <div class="search-output">
     <template v-if="loading">
-      <p text-center>{{ 検索中 }}</p>
+      <p text-center>{{ i18n.search_component.searching }}</p>
     </template>
 
     <template v-else-if="props.query && searchResults.length > 0">
-      <p text-center>{{ searchResults.length }}{{ 表示中 }}</p>
+      <p text-center>{{ i18n.search_component.len.before }}{{ searchResults.length }}{{ i18n.search_component.len.after }}</p>
       <ul class="結果一覧">
         <template v-for="result in searchResults" :key="result.url">
           <hr />
@@ -127,12 +128,12 @@ onMounted(async () => {
     </template>
 
     <template v-else-if="props.query && !loading">
-      <p text-center>{{ 結果なし }}</p>
+      <p text-center>{{ i18n.search_component.no_result }}</p>
     </template>
 
     <template v-else>
-      <p text-center>入力して検索</p>
-      <p class="helpMessage">全文検索をします．</p>
+      <p text-center>{{ i18n.search_component.type_to_search }}</p>
+      <p class="helpMessage">{{ i18n.search_component.all }}</p>
     </template>
   </div>
 </template>

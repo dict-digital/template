@@ -8,5 +8,19 @@
     "light": "Light",
     "dark": "Dark"
   },
-  "site_map": "Sitemap"
+  "search_component": {
+    "no_result": "Result not found",
+    "searching": "Searching...",
+    "len": {
+      "before": "",
+      "after": ""
+    },
+    "type_to_search": "Type something to search",
+    "all": "Run full text retrieval"
+  },
+  "site_map": "Sitemap",
+  "display_markdown": "View as Markdown",
+  "edit_this_page": "Edit this page",
+  "not_found_title": "Not Found",
+  "not_found_error": "Still loading or content is not existing."
 }
