@@ -60,6 +60,9 @@ export default defineNuxtConfig({
     name: '物理 - dict.digital',
     trailingSlash: true
   },
+  unocss: {
+    nuxtLayers: true
+  },
   vite: {
     optimizeDeps: {
       include: ['@vue/devtools-core', '@vue/devtools-kit', '@vueuse/core']
