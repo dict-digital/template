@@ -10,8 +10,10 @@
 │   ├── _headers
 │   └── _redirects
 ├── app
+│   ├── app.config.ts <- 利用者が操作
 │   ├── assets
 │   │   └── global.scss
+│   │   └── i18n.json <- 利用者が操作
 │   ├── components
 │   │   └── Header.vue
 │   ├── layouts
@@ -21,7 +23,7 @@
 │   └── var
 │       └── msg.ts
 ├── content
-│   └── dict <- ファイル名は全て"index.md"
+│   └── dict <- 利用者が主に操作するディレクトリ．ファイル名は全て"index.md"
 │       └── gb
 │           ├──index.md
 │           └──gibraltar/index.md <- 複数階層のパスも可能
