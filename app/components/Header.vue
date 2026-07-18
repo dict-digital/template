@@ -1,5 +1,7 @@
-<script setup lang='ts'>
-import i18n from '~/assets/i18n.json';
+<script setup lang="ts">
+const appConfig = useAppConfig();
+
+const i18n = appConfig.i18n;
 </script>
 
 <template>

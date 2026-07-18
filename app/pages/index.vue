@@ -3,7 +3,6 @@ const appConfig = useAppConfig();
 
 definePageMeta({
   hideSidebar: false,
-  sidebarContent: 'search',
   contentMain: false,
   menuTitle: 'Welcome!',
   returnTo: '/'
@@ -15,7 +14,7 @@ useSeoMeta({
 </script>
 
 <template lang="pug">
-h1 ようこそ
-p このアプリはdict.digtal テンプレートの使い方を示したものです．
-p 左の検索ボックスに何か入力してみてください．
+h1 Welcome!
+p This App is the example of dict.digital Nuxt template (not Nuxt layer version).
+p You can search contents by typing on the sidebar.
 </template>

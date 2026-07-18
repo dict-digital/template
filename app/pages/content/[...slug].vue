@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { joinURL, withoutHost } from 'ufo';
 
-import i18n from '~/assets/i18n.json';
-
 const slugArray = useRoute().params.slug; // [...slug] の場合は配列になる
 
 const appConfig = useAppConfig();
+
+const i18n = appConfig.i18n;
 
 // 配列を "dir1/dir2/page" のようなスラッシュ区切りの文字列に変換
 // 万が一空（ルートパス）の場合を考慮して、空文字をデフォルト値に設定

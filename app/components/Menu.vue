@@ -3,9 +3,9 @@ import { ref, onMounted, onUnmounted } from 'vue';
 
 import { joinURL, withoutHost } from 'ufo';
 
-import i18n from "~/assets/i18n.json";
-
 const appConfig = useAppConfig();
+
+const i18n = appConfig.i18n;
 
 const colorMode = useColorMode();
 
@@ -100,7 +100,11 @@ const changeColorMode = () => {
               items-center
             >
               <span>{{ i18n.color_mode.name }}</span>
-              <span>{{ i18n.color_mode[colorMode.preference] }}</span>
+              <span>{{
+                i18n.color_mode[
+                  colorMode.preference as 'name' | 'system' | 'light' | 'dark'
+                ]
+              }}</span>
             </button>
           </li>
           <li>
@@ -158,8 +162,9 @@ const changeColorMode = () => {
         border: none;
         color: var(--foreground);
         cursor: pointer;
-        font-size: 0.875rem;
+        font-size: 1rem;
         transition: background-color 0.2s;
+        font-family: 'Zen Kaku Gothic New', sans-serif;
         &:hover {
           background-color: var(--codeBack);
         }

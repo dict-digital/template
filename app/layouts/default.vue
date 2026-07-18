@@ -20,8 +20,7 @@ const route = useRoute();
           contentMain: route.meta.contentMain
         }"
       >
-        <InfoList v-if="route.meta.sidebarContent === 'info'" />
-        <SearchEntry v-else />
+        <SearchEntry />
       </div>
 
       <!-- content main -->

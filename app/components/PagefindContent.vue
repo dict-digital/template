@@ -1,7 +1,9 @@
 <script lang="ts" setup>
 import { ref, onMounted, watch } from 'vue';
 
-import i18n from '~/assets/i18n.json';
+const appConfig = useAppConfig();
+
+const i18n = appConfig.i18n;
 
 // CSS
 import '~/assets/pagefindUi.scss';
@@ -96,14 +98,21 @@ onMounted(async () => {
     </template>
 
     <template v-else-if="props.query && searchResults.length > 0">
-      <p text-center>{{ i18n.search_component.len.before }} {{ searchResults.length }} {{ i18n.search_component.len.after }}</p>
+      <p text-center>
+        {{ i18n.search_component.len.before }} {{ searchResults.length }}
+        {{ i18n.search_component.len.after }}
+      </p>
       <ul class="結果一覧">
         <template v-for="result in searchResults" :key="result.url">
           <hr />
           <li class="項目">
             <NuxtLink class="項目リンク" :href="result.url" text-left>
               <h2>{{ result.meta.title || result.url }}</h2>
-              <p text-[var(--themeColor)] class="詳細" v-html="result.excerpt"></p>
+              <p
+                text-[var(--themeColor)]
+                class="詳細"
+                v-html="result.excerpt"
+              ></p>
             </NuxtLink>
           </li>
 

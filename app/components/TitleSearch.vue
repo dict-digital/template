@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-import i18n from '~/assets/i18n.json';
+const appConfig = useAppConfig();
+
+const i18n = appConfig.i18n;
 
 const props = defineProps({
   query: String
