@@ -1,4 +1,4 @@
-# DictDigi Template
+# DigiDict Template
 
 ## Directory structure
 
